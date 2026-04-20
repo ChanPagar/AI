@@ -122,5 +122,21 @@
       { "text": "United Nations Sustainable Development Goals", "url": "https://sdgs.un.org/" },
       { "text": "SDG 9 Official Page", "url": "https://sdgs.un.org/goals/goal9" }
     ]
+  },
+  "chatbot": {
+    "greeting": "Hello! I'm your SDG 9 Assistant. Ask me anything about Industry, Innovation and Infrastructure! 👋",
+    "knowledgeBase": {
+      "what is sdg 9": "SDG 9 focuses on building resilient infrastructure, promoting sustainable industrialization, and fostering innovation. It recognizes that reliable infrastructure and sustainable industries are the backbone of economic development.",
+      "sdg 9 targets": "SDG 9 has 6 targets: 9.1 Reliable Infrastructure, 9.2 Sustainable Industrialization, 9.3 Small Business Support, 9.4 Clean Industries, 9.5 Innovation & Research, and 9.c ICT Access.",
+      "how can i help": "You can support SDG 9 by: supporting infrastructure projects, promoting innovation, expanding digital access, supporting sustainable industries, building capacity, and enabling public-private partnerships.",
+      "infrastructure": "Resilient infrastructure is essential for sustainable development. It includes reliable water and sanitation systems, transportation networks, energy systems, and digital connectivity.",
+      "innovation": "Innovation drives sustainable development. We need enhanced research capabilities, technology transfer, and support for entrepreneurs, especially in developing countries.",
+      "digital access": "Digital access is critical. Currently, 2.3 billion people lack internet access. We're working to expand connectivity in underserved communities.",
+      "climate": "SDG 9 is deeply connected to climate action. Clean industries and sustainable infrastructure reduce environmental impact and support the transition to green economies.",
+      "developing countries": "Developing countries face unique challenges in infrastructure, industrialization, and technology access. International cooperation and investment are crucial to bridging these gaps.",
+      "small business": "Small and medium enterprises are vital to sustainable industrialization. Target 9.3 focuses on increasing their access to technology and financial services.",
+      "manufacturing": "Sustainable manufacturing reduces waste and environmental impact. Modern industries use clean technologies and efficient processes to minimize their carbon footprint.",
+      "default": "I'm here to help with questions about SDG 9 - Industry, Innovation and Infrastructure. Ask me about the targets, progress, or how you can contribute!"
+    }
   }
 }

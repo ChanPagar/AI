@@ -10,7 +10,7 @@ This website implements a **service-oriented architecture** with separation of c
 
 - **Module Pattern**: Encapsulated services with private/public interfaces
 - **Observer Pattern**: Efficient scroll-based animations using Intersection Observer
-- **Service-Oriented Architecture**: Distinct services for logging, data, animations, and navigation
+- **Service-Oriented Architecture**: Distinct services for logging, data, animations, navigation, and chatbot
 - **Data-Driven Design**: External JSON configuration for content management
 - **Graceful Degradation**: Full functionality without JavaScript with progressive enhancement
 
@@ -65,13 +65,14 @@ README.md           - This file
 
 ### 🏛️ Architecture Features
 
-- **Modular Services**: LoggerService, DataService, AnimationService, NavigationService
+- **Modular Services**: LoggerService, DataService, AnimationService, NavigationService, ChatService
 - **Error Handling**: Try-catch blocks and graceful degradation throughout
 - **Performance Optimized**: Intersection Observer for animations, event delegation
 - **Maintainable**: Clear separation of concerns, single responsibility principle
 - **Testable**: All services exposed on `window.SDG9` for console debugging
 - **Scalable**: Easy to add new services without affecting existing code
 - **Data-Driven**: JSON configuration for content management
+- **AI Chatbox**: Intelligent chatbot with SDG 9 knowledge base
 
 ### 🎨 Design Features
 
@@ -120,6 +121,14 @@ NavigationService.init();
 // Manages scroll-based animations with Intersection Observer
 AnimationService.fadeInOnScroll();      // Fade elements on scroll
 AnimationService.animateProgressBars(); // Animate progress bars
+```
+
+### ChatService
+```javascript
+// AI chatbox with SDG 9 knowledge base
+ChatService.init();                    // Initialize chatbox
+ChatService.toggleChatbox();           // Toggle open/closed
+ChatService.sendMessage(message);      // Send chat message
 ```
 
 ### App (Bootstrap)

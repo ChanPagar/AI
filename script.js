@@ -194,6 +194,152 @@ const UIAnimationService = (() => {
 })();
 
 /**
+ * Chat Service
+ * Manages AI chatbox with SDG 9 knowledge base
+ */
+const ChatService = (() => {
+  let isOpen = false;
+  let conversationHistory = [];
+
+  const knowledgeBase = {
+    "what is sdg 9": "SDG 9 focuses on building resilient infrastructure, promoting sustainable industrialization, and fostering innovation. It recognizes that reliable infrastructure and sustainable industries are the backbone of economic development.",
+    "sdg 9 targets": "SDG 9 has 6 targets: 9.1 Reliable Infrastructure, 9.2 Sustainable Industrialization, 9.3 Small Business Support, 9.4 Clean Industries, 9.5 Innovation & Research, and 9.c ICT Access.",
+    "how can i help": "You can support SDG 9 by: supporting infrastructure projects, promoting innovation, expanding digital access, supporting sustainable industries, building capacity, and enabling public-private partnerships.",
+    "infrastructure": "Resilient infrastructure is essential for sustainable development. It including reliable water and sanitation systems, transportation networks, energy systems, and digital connectivity.",
+    "innovation": "Innovation drives sustainable development. We need enhanced research capabilities, technology transfer, and support for entrepreneurs, especially in developing countries.",
+    "digital access": "Digital access is critical. Currently, 2.3 billion people lack internet access. We're working to expand connectivity in underserved communities.",
+    "climate": "SDG 9 is deeply connected to climate action. Clean industries and sustainable infrastructure reduce environmental impact and support the transition to green economies.",
+    "developing countries": "Developing countries face unique challenges in infrastructure, industrialization, and technology access. International cooperation and investment are crucial to bridging these gaps.",
+    "default": "I'm here to help with questions about SDG 9 - Industry, Innovation and Infrastructure. Ask me about the targets, progress, or how you can contribute!"
+  };
+
+  const findResponse = (userMessage) => {
+    const lowerMessage = userMessage.toLowerCase();
+    
+    for (const [keyword, response] of Object.entries(knowledgeBase)) {
+      if (lowerMessage.includes(keyword)) {
+        return response;
+      }
+    }
+    return knowledgeBase.default;
+  };
+
+  const createChatbotUI = () => {
+    const chatboxHTML = `
+      <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+          <h3>SDG 9 Assistant</h3>
+          <button id="closeChat" class="close-chat" aria-label="Close chat">✕</button>
+        </div>
+        <div id="chatMessages" class="chat-messages">
+          <div class="chat-message bot-message">
+            <p>Hello! I'm your SDG 9 Assistant. Ask me anything about Industry, Innovation and Infrastructure! 👋</p>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <input 
+            type="text" 
+            id="chatInput" 
+            class="chat-input" 
+            placeholder="Ask about SDG 9..."
+            aria-label="Chat message input"
+          />
+          <button id="sendChat" class="send-btn" aria-label="Send message">Send</button>
+        </div>
+      </div>
+      <button id="chatToggle" class="chat-toggle" aria-label="Open chat">💬 Chat</button>
+    `;
+    
+    document.body.insertAdjacentHTML("beforeend", chatboxHTML);
+  };
+
+  const attachEventListeners = () => {
+    const chatToggle = document.getElementById("chatToggle");
+    const closeChat = document.getElementById("closeChat");
+    const sendChat = document.getElementById("sendChat");
+    const chatInput = document.getElementById("chatInput");
+
+    chatToggle.addEventListener("click", toggleChatbox);
+    closeChat.addEventListener("click", closeChatbox);
+    sendChat.addEventListener("click", sendMessage);
+    chatInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    LoggerService.log("Chat event listeners attached");
+  };
+
+  const toggleChatbox = () => {
+    isOpen ? closeChatbox() : openChatbox();
+  };
+
+  const openChatbox = () => {
+    const chatbox = document.getElementById("chatbox");
+    const chatToggle = document.getElementById("chatToggle");
+    chatbox.classList.add("open");
+    chatToggle.classList.add("hidden");
+    document.getElementById("chatInput").focus();
+    isOpen = true;
+    LoggerService.log("Chatbox opened");
+  };
+
+  const closeChatbox = () => {
+    const chatbox = document.getElementById("chatbox");
+    const chatToggle = document.getElementById("chatToggle");
+    chatbox.classList.remove("open");
+    chatToggle.classList.remove("hidden");
+    isOpen = false;
+    LoggerService.log("Chatbox closed");
+  };
+
+  const sendMessage = () => {
+    const input = document.getElementById("chatInput");
+    const userMessage = input.value.trim();
+    
+    if (!userMessage) return;
+
+    addMessageToChat(userMessage, "user");
+    input.value = "";
+    LoggerService.log("User message sent", userMessage);
+
+    // Simulate typing delay for bot response
+    setTimeout(() => {
+      const botResponse = findResponse(userMessage);
+      addMessageToChat(botResponse, "bot");
+    }, 500);
+  };
+
+  const addMessageToChat = (message, sender) => {
+    const messagesContainer = document.getElementById("chatMessages");
+    const messageDiv = document.createElement("div");
+    messageDiv.className = `chat-message ${sender}-message`;
+    
+    const messageP = document.createElement("p");
+    messageP.textContent = message;
+    messageDiv.appendChild(messageP);
+    
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    conversationHistory.push({ sender, message });
+  };
+
+  return {
+    init: () => {
+      try {
+        createChatbotUI();
+        attachEventListeners();
+        LoggerService.log("Chat service initialized");
+      } catch (error) {
+        LoggerService.error("Chat service initialization failed", error);
+      }
+    },
+    sendMessage,
+    toggleChatbox,
+  };
+})();
+
+/**
  * Application Bootstrap
  * Initializes all services and starts the application
  */
@@ -205,6 +351,7 @@ const App = (() => {
       // Initialize services in order
       NavigationService.init();
       UIAnimationService.init();
+      ChatService.init();
 
       // Load and verify data
       const data = await DataService.loadData();
@@ -231,4 +378,4 @@ const App = (() => {
 })();
 
 // Export for debugging in console
-window.SDG9 = { LoggerService, DataService, NavigationService };
+window.SDG9 = { LoggerService, DataService, NavigationService, ChatService };
