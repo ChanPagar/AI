@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "SDG 9 - Industry, Innovation and Infrastructure",
+    "description": "Building resilient infrastructure, promoting innovation, and fostering sustainable industrialization"
+  },
+  "navigation": [
+    { "label": "Home", "href": "#home", "id": "home" },
+    { "label": "About", "href": "#about", "id": "about" },
+    { "label": "Targets", "href": "#targets", "id": "targets" },
+    { "label": "Progress", "href": "#progress", "id": "progress" },
+    { "label": "Take Action", "href": "#action", "id": "action" }
+  ],
+  "hero": {
+    "title": "SDG Goal 9",
+    "subtitle": "Industry, Innovation and Infrastructure",
+    "description": "Building resilient infrastructure, promoting innovation, and fostering sustainable industrialization",
+    "ctaText": "Learn More",
+    "ctaHref": "#about"
+  },
+  "about": {
+    "title": "What is SDG 9?",
+    "paragraphs": [
+      "Sustainable Development Goal 9 focuses on building resilient infrastructure, promoting sustainable industrialization, and fostering innovation. This goal recognizes that reliable infrastructure and sustainable industries are the backbone of economic development and human prosperity.",
+      "SDG 9 is critical for achieving many other Sustainable Development Goals. It encompasses:"
+    ],
+    "highlights": [
+      "Developing reliable, sustainable, and resilient infrastructure",
+      "Promoting inclusive and sustainable industrialization",
+      "Fostering innovation and technological development",
+      "Increasing access to ICT and internet",
+      "Supporting domestic technology development"
+    ],
+    "statistics": [
+      { "value": "2.3 Billion", "description": "People without internet access" },
+      { "value": "90%", "description": "Of developing countries lack basic digital infrastructure" },
+      { "value": "$1.3 Trillion", "description": "Annual infrastructure investment gap in developing countries" }
+    ]
+  },
+  "targets": [
+    {
+      "id": "9.1",
+      "title": "Reliable Infrastructure",
+      "description": "Develop reliable, sustainable, and resilient infrastructure to support economic development and human well-being, with emphasis on affordable access."
+    },
+    {
+      "id": "9.2",
+      "title": "Sustainable Industrialization",
+      "description": "Promote inclusive and sustainable industrialization and foster innovation in all countries, particularly in developing nations."
+    },
+    {
+      "id": "9.3",
+      "title": "Small Business Support",
+      "description": "Increase access to ICT and provide internet access with a focus on supporting micro, small, and medium-sized enterprises and entrepreneurs."
+    },
+    {
+      "id": "9.4",
+      "title": "Clean Industries",
+      "description": "Upgrade infrastructure and retrofit industries to make them sustainable and resource-efficient, with increased adoption of clean technologies."
+    },
+    {
+      "id": "9.5",
+      "title": "Innovation & Research",
+      "description": "Enhance scientific research and industrial technological capabilities, particularly in developing countries and least developed countries."
+    },
+    {
+      "id": "9.c",
+      "title": "ICT Access",
+      "description": "Significantly increase access to ICT and provide free internet access in least developed countries and small island states."
+    }
+  ],
+  "progress": {
+    "title": "Progress & Challenges",
+    "items": [
+      { "title": "Infrastructure Development", "percentage": 45, "description": "Developing countries are making progress, but investment gaps remain significant" },
+      { "title": "Industrial Growth", "percentage": 38, "description": "Manufacturing value added growth needs acceleration" },
+      { "title": "Digital Connectivity", "percentage": 62, "description": "Mobile broadband coverage expanding, but gaps persist in rural areas" },
+      { "title": "R&D Investment", "percentage": 28, "description": "Research & development spending in developing countries remains low" }
+    ],
+    "challenges": [
+      { "title": "Financing Gap", "description": "Insufficient capital for infrastructure projects" },
+      { "title": "Digital Divide", "description": "Unequal access to technology and internet" },
+      { "title": "Technology Transfer", "description": "Limited sharing of advanced technologies" },
+      { "title": "Sustainability", "description": "Need for environmentally friendly infrastructure" },
+      { "title": "Capacity Building", "description": "Skills shortage in developing regions" }
+    ]
+  },
+  "actions": [
+    {
+      "icon": "🏗️",
+      "title": "Support Infrastructure Projects",
+      "description": "Advocate for sustainable infrastructure development in your community and support green building initiatives."
+    },
+    {
+      "icon": "💡",
+      "title": "Promote Innovation",
+      "description": "Encourage research and development, support startups, and foster entrepreneurship and technological advancement."
+    },
+    {
+      "icon": "🌐",
+      "title": "Expand Digital Access",
+      "description": "Support programs that bring internet connectivity to underserved communities and promote digital literacy."
+    },
+    {
+      "icon": "⚙️",
+      "title": "Sustainable Industry",
+      "description": "Choose products from sustainable businesses, support clean technology adoption, and promote circular economy practices."
+    },
+    {
+      "icon": "🎓",
+      "title": "Build Capacity",
+      "description": "Invest in education and training programs to develop skills in technology, engineering, and innovation."
+    },
+    {
+      "icon": "🤝",
+      "title": "Public-Private Partnership",
+      "description": "Collaborate with businesses and governments to drive sustainable industrial and infrastructure development."
+    }
+  ],
+  "footer": {
+    "copyright": "© 2024 SDG 9 - Industry, Innovation and Infrastructure. Working towards a sustainable future.",
+    "links": [
+      { "text": "United Nations Sustainable Development Goals", "url": "https://sdgs.un.org/" },
+      { "text": "SDG 9 Official Page", "url": "https://sdgs.un.org/goals/goal9" }
+    ]
+  }
+}
